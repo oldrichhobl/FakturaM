@@ -1,0 +1,806 @@
+<html xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+<META content="text/html" charset="UTF-8" http-equiv="Content-Type"/>
+<META content="cs" http-equiv="Content-language"/>
+<title>Faktura - MIS</title>
+<style>
+* { margin: 0; padding: 0; }
+
+body{ 
+	font-size: 10pt;
+	background-color:white;
+	font-family : "Arial", "MS Serif", "New York", serif;
+}
+
+#mainrambot { width: 800px; margin: 0 auto; }
+
+textarea { border: 0; font: 14px Georgia, Serif; overflow: hidden; resize: none; }
+
+table { border-collapse: collapse; font-size: 10pt;}
+table td, table th { border: 1px solid black; padding: 5px; }
+
+#header { height: 15px; width: 100%; margin: 20px 0; background: #222; text-align: center; color: white; font: bold 15px Helvetica, Sans-Serif; text-decoration: uppercase; letter-spacing: 20px; padding: 8px 0px; }
+
+
+#logo { text-align: left; position: relative; margin-top: 5px;
+	display: block;	
+	border: 1px solid #fff; max-height: 100px; overflow: hidden; }
+
+
+	#doklad { font-size: 12px; width: 600px; text-align: center; margin-left: 1px;  }
+	.evc { font-size: 12px; width: 200px; text-align: center; margin-left: 200px;  }
+	 
+	.podtr {vertical-align: top; text-decoration: underline;}
+	.icodico {width: 170px; display:inline-block; margin-left: 110px;}
+		.icodico dt {width: 30%;text-align: left; display:inline-block;}
+		.icodico dd {width: 60%;text-align: left; display:inline-block;}
+	.ustav {display:inline-block; width: 100mm;}
+		.ustav dt {width: 30%;text-align: left; display:inline-block;}
+		.ustav dd {width: 60%;text-align: left; display:inline-block;}
+	.forma {display:inline-block; width: 100mm;}
+		.forma dt {width: 60%;text-align: left; display:inline-block;}
+		.forma dd {width: 30%;text-align: left; display:inline-block;}
+
+
+	.address { font-weight: bold; width: 100mm; }
+	.textzapis {
+		font-size: 8pt;
+		margin-top:10mm;
+		text-align : left;
+		}
+#meta { margin-top: 1px; width: 300px; float: right; }
+#meta td { text-align: right;  }
+#meta td.meta-head { text-align: left; background: #eee; }
+#meta td textarea { width: 100%; height: 20px; text-align: right; }
+
+#tablehead { clear: both; width: 100%; margin: 3px 0 0 0; border: 1px solid black; }
+#telohead { clear: both; width: 100%; margin: 3px 0 0 0; border: 1px solid black; }
+#pata { clear: both; width: 100%; margin: 3px 0 0 0; border: 1px solid black; }
+
+#foot { clear: both; width: 100%; margin: 30px 0 0 0; border: 1px solid black; }
+
+.mjd,.mnd,.jcd,.ucd,.dphd {text-align: right;}
+
+.noborder {border: 0; vertical-align:top;}
+.leftborder {border:0; border-left: solid 1px black; vertical-align:top;}
+.topborder {border:0; border-top: solid 1px black; vertical-align:top;}
+.textright {text-align: right;	}
+.textcenter {text-align: center;}
+
+.zazh {display:inline-block; width: 50%; margin-top: 20mm;}
+.zaob {display:inline-block; width: 50%; margin-top: 20mm; }
+.razitko {margin-top: 8mm;}
+
+/* class works for table row */
+table tr.page-break{
+  page-break-after:always
+} 
+
+.newpage {
+          page-break-before:always;
+          display : block;
+          }
+
+
+        </style>
+</head>
+<body>
+<DIV id="mainrambot">
+<div id="logo">
+<IMG src="logo.jpg" width="140px" height="80px"/>
+</div>
+<div id="doklad">
+            DAÒOVÝ DOKLAD
+            <span class="podtr evc">
+              evid.è:
+              2010100024</span>
+</div>
+<table id="tablehead">
+<TR>
+<TD>
+<span class="podtr">Zhotovitel:</span>
+<dl class="icodico">
+<dt>IÈ:</dt>
+<dd>24204005</dd>
+<dt>DIÈ:</dt>
+<dd>CZ24204005</dd>
+</dl>
+<dl class="address">
+<dt>Metrostav Infrastructure a.s.</dt>
+<dt>Koželužská 2246/55</dt>
+<dt>180 00
+              ,
+              Praha 8 Libeò</dt>
+</dl>
+<dl class="ustav">
+<dt>Penìžní ústav :</dt>
+<dd>KB Praha 7</dd>
+<dt>èíslo úètu :</dt>
+<dd>1809071 / 0100</dd>
+<dt style="width:5em;">IBAN:</dt>
+<dd style="width:15em;">CZ19 0100 0000 0000 0180 9071</dd>
+</dl>
+<DIV class="textzapis">Zápis do OR - Mìstský soud v Praze, odd. B vl. 17819</DIV>
+</TD>
+<TD class="noborder">
+<span class="podtr">
+<B>Objednatel:</B>
+</span>
+<dl class="icodico">
+<dt>IÈ:</dt>
+<dd>00014915</dd>
+<dt>DIÈ:</dt>
+<dd>CZ00014915</dd>
+</dl>
+<dl class="address">
+<dt>Metrostav a.s.</dt>
+<dt> 
+              Divize -
+              06
+              -
+              06007770</dt>
+<dt>Koželužská 2450/4</dt>
+<dt>PRAHA 8 - LIBEÒ</dt>
+<dt>180 00  PRAHA 8</dt>
+</dl>
+</TD>
+</TR>
+<TR>
+<TD>
+<dl class="ustav">
+<dt>Forma úhrady:</dt>
+<dd>Pøíkaz k úhradì</dd>
+<dt>Den splatnosti:</dt>
+<dd>11.11.2020</dd>
+<dt>Den vystavení:</dt>
+<dd>12.10.2020</dd>
+<dt>Datum uskuteènìní plnìní:</dt>
+<dd>25.09.2020</dd>
+</dl>
+</TD>
+<TD>
+<DIV class="text40">Zpùsob dopravy :</DIV>
+<DIV class="text40"/>
+<DIV class="text40">Místo vyskladnìní :</DIV>
+<DIV class="text40"/>
+<DIV class="text40">Místo urèení :</DIV>
+<DIV class="text40"/>
+<DIV class="text40">Dodací list è.:</DIV>
+<DIV class="text40"/>
+</TD>
+</TR>
+<TR>
+<TD class="noborder">
+          Vaše objednávka (smlouva) è. :
+          <br/></TD>
+<TD class="noborder">
+<DIV class="textobj">ze dne:</DIV>
+<br/></TD>
+</TR>
+</table>
+<table id="telohead">
+<THEAD>
+<TR>
+<TD>Rozsah a pøedmìt plnìní SKP</TD>
+<TD>Sazba <br/>DPH</TD>
+<TD>Mj</TD>
+<TD>Množství</TD>
+<TD>jedn.cena</TD>
+<TD>Úhrnná èástka <br/>základu danì</TD>
+</TR>
+</THEAD>
+<TBODY>
+<TR>
+<TD class="topborder">
+            Dne:
+            01.09.20
+            :
+            3A8 7149
+            -
+            AS autojeøáb</TD>
+<TD class="dphd leftborder"/>
+<TD class="mjd leftborder"/>
+<TD class="mnd leftborder"/>
+<TD class="jcd leftborder"/>
+<TD class="ucd leftborder"/>
+</TR>
+<TR class="vykon">
+<TD class="poznd noborder">
+        Stazka:00008182_20_0064</TD>
+<TD class="dphd leftborder">21.00</TD>
+<TD class="mjd leftborder">1/4 H</TD>
+<TD class="mnd leftborder">30.00</TD>
+<TD class="jcd leftborder">225.00</TD>
+<TD class="ucd leftborder">6750.00</TD>
+</TR>
+<TR>
+<TD class="topborder">
+            Dne:
+            02.09.20
+            :
+            3A8 7149
+            -
+            AS autojeøáb</TD>
+<TD class="dphd leftborder"/>
+<TD class="mjd leftborder"/>
+<TD class="mnd leftborder"/>
+<TD class="jcd leftborder"/>
+<TD class="ucd leftborder"/>
+</TR>
+<TR class="vykon">
+<TD class="poznd noborder">
+        Stazka:00008182_20_0065</TD>
+<TD class="dphd leftborder">21.00</TD>
+<TD class="mjd leftborder">1/4 H</TD>
+<TD class="mnd leftborder">31.00</TD>
+<TD class="jcd leftborder">225.00</TD>
+<TD class="ucd leftborder">6975.00</TD>
+</TR>
+<TR>
+<TD class="topborder">
+            Dne:
+            03.09.20
+            :
+            3A8 7149
+            -
+            AS autojeøáb</TD>
+<TD class="dphd leftborder"/>
+<TD class="mjd leftborder"/>
+<TD class="mnd leftborder"/>
+<TD class="jcd leftborder"/>
+<TD class="ucd leftborder"/>
+</TR>
+<TR class="vykon">
+<TD class="poznd noborder">
+        Stazka:00008182_20_0066</TD>
+<TD class="dphd leftborder">21.00</TD>
+<TD class="mjd leftborder">1/4 H</TD>
+<TD class="mnd leftborder">35.00</TD>
+<TD class="jcd leftborder">225.00</TD>
+<TD class="ucd leftborder">7875.00</TD>
+</TR>
+<TR>
+<TD class="topborder">
+            Dne:
+            04.09.20
+            :
+            3A8 7149
+            -
+            AS autojeøáb</TD>
+<TD class="dphd leftborder"/>
+<TD class="mjd leftborder"/>
+<TD class="mnd leftborder"/>
+<TD class="jcd leftborder"/>
+<TD class="ucd leftborder"/>
+</TR>
+<TR class="vykon">
+<TD class="poznd noborder">
+        Stazka:00008182_20_0067</TD>
+<TD class="dphd leftborder">21.00</TD>
+<TD class="mjd leftborder">1/4 H</TD>
+<TD class="mnd leftborder">45.00</TD>
+<TD class="jcd leftborder">225.00</TD>
+<TD class="ucd leftborder">10125.00</TD>
+</TR>
+<TR>
+<TD class="topborder">
+            Dne:
+            07.09.20
+            :
+            3A8 7149
+            -
+            AS autojeøáb</TD>
+<TD class="dphd leftborder"/>
+<TD class="mjd leftborder"/>
+<TD class="mnd leftborder"/>
+<TD class="jcd leftborder"/>
+<TD class="ucd leftborder"/>
+</TR>
+<tr class="page-break"><td colspan="6"/></tr>
+<TR class="vykon">
+<TD class="poznd noborder">
+        Stazka:00008182_20_0070</TD>
+<TD class="dphd leftborder">21.00</TD>
+<TD class="mjd leftborder">1/4 H</TD>
+<TD class="mnd leftborder">30.00</TD>
+<TD class="jcd leftborder">225.00</TD>
+<TD class="ucd leftborder">6750.00</TD>
+</TR>
+<TR>
+<TD class="topborder">
+            Dne:
+            08.09.20
+            :
+            3A8 7149
+            -
+            AS autojeøáb</TD>
+<TD class="dphd leftborder"/>
+<TD class="mjd leftborder"/>
+<TD class="mnd leftborder"/>
+<TD class="jcd leftborder"/>
+<TD class="ucd leftborder"/>
+</TR>
+<TR class="vykon">
+<TD class="poznd noborder">
+        Stazka:00008182_20_0071</TD>
+<TD class="dphd leftborder">21.00</TD>
+<TD class="mjd leftborder">1/4 H</TD>
+<TD class="mnd leftborder">30.00</TD>
+<TD class="jcd leftborder">225.00</TD>
+<TD class="ucd leftborder">6750.00</TD>
+</TR>
+<TR>
+<TD class="topborder">
+            Dne:
+            09.09.20
+            :
+            3A8 7149
+            -
+            AS autojeøáb</TD>
+<TD class="dphd leftborder"/>
+<TD class="mjd leftborder"/>
+<TD class="mnd leftborder"/>
+<TD class="jcd leftborder"/>
+<TD class="ucd leftborder"/>
+</TR>
+<TR class="vykon">
+<TD class="poznd noborder">
+        Stazka:00008182_20_0072</TD>
+<TD class="dphd leftborder">21.00</TD>
+<TD class="mjd leftborder">1/4 H</TD>
+<TD class="mnd leftborder">30.00</TD>
+<TD class="jcd leftborder">225.00</TD>
+<TD class="ucd leftborder">6750.00</TD>
+</TR>
+<TR>
+<TD class="topborder">
+            Dne:
+            11.09.20
+            :
+            3A8 7149
+            -
+            AS autojeøáb</TD>
+<TD class="dphd leftborder"/>
+<TD class="mjd leftborder"/>
+<TD class="mnd leftborder"/>
+<TD class="jcd leftborder"/>
+<TD class="ucd leftborder"/>
+</TR>
+<TR class="vykon">
+<TD class="poznd noborder">
+        Stazka:00008182_20_0074</TD>
+<TD class="dphd leftborder">21.00</TD>
+<TD class="mjd leftborder">1/4 H</TD>
+<TD class="mnd leftborder">30.00</TD>
+<TD class="jcd leftborder">225.00</TD>
+<TD class="ucd leftborder">6750.00</TD>
+</TR>
+<TR>
+<TD class="topborder">
+            Dne:
+            14.09.20
+            :
+            3A8 7149
+            -
+            AS autojeøáb</TD>
+<TD class="dphd leftborder"/>
+<TD class="mjd leftborder"/>
+<TD class="mnd leftborder"/>
+<TD class="jcd leftborder"/>
+<TD class="ucd leftborder"/>
+</TR>
+<TR class="vykon">
+<TD class="poznd noborder">
+        Stazka:00008182_20_0077</TD>
+<TD class="dphd leftborder">21.00</TD>
+<TD class="mjd leftborder">1/4 H</TD>
+<TD class="mnd leftborder">36.00</TD>
+<TD class="jcd leftborder">225.00</TD>
+<TD class="ucd leftborder">8100.00</TD>
+</TR>
+<TR>
+<TD class="topborder">
+            Dne:
+            16.09.20
+            :
+            3A8 7149
+            -
+            AS autojeøáb</TD>
+<TD class="dphd leftborder"/>
+<TD class="mjd leftborder"/>
+<TD class="mnd leftborder"/>
+<TD class="jcd leftborder"/>
+<TD class="ucd leftborder"/>
+</TR>
+<TR class="vykon">
+<TD class="poznd noborder">
+        Stazka:00008182_20_0079</TD>
+<TD class="dphd leftborder">21.00</TD>
+<TD class="mjd leftborder">1/4 H</TD>
+<TD class="mnd leftborder">30.00</TD>
+<TD class="jcd leftborder">225.00</TD>
+<TD class="ucd leftborder">6750.00</TD>
+</TR>
+<TR>
+<TD class="topborder">
+            Dne:
+            18.09.20
+            :
+            3A8 7149
+            -
+            AS autojeøáb</TD>
+<TD class="dphd leftborder"/>
+<TD class="mjd leftborder"/>
+<TD class="mnd leftborder"/>
+<TD class="jcd leftborder"/>
+<TD class="ucd leftborder"/>
+</TR>
+<TR class="vykon">
+<TD class="poznd noborder">
+        Stazka:00008182_20_0081</TD>
+<TD class="dphd leftborder">21.00</TD>
+<TD class="mjd leftborder">1/4 H</TD>
+<TD class="mnd leftborder">30.00</TD>
+<TD class="jcd leftborder">225.00</TD>
+<TD class="ucd leftborder">6750.00</TD>
+</TR>
+<TR>
+<TD class="topborder">
+            Dne:
+            21.09.20
+            :
+            3A8 7149
+            -
+            AS autojeøáb</TD>
+<TD class="dphd leftborder"/>
+<TD class="mjd leftborder"/>
+<TD class="mnd leftborder"/>
+<TD class="jcd leftborder"/>
+<TD class="ucd leftborder"/>
+</TR>
+<TR class="vykon">
+<TD class="poznd noborder">
+        Stazka:00008182_20_0084</TD>
+<TD class="dphd leftborder">21.00</TD>
+<TD class="mjd leftborder">1/4 H</TD>
+<TD class="mnd leftborder">30.00</TD>
+<TD class="jcd leftborder">225.00</TD>
+<TD class="ucd leftborder">6750.00</TD>
+</TR>
+<TR>
+<TD class="topborder">
+            Dne:
+            22.09.20
+            :
+            3A8 7149
+            -
+            AS autojeøáb</TD>
+<TD class="dphd leftborder"/>
+<TD class="mjd leftborder"/>
+<TD class="mnd leftborder"/>
+<TD class="jcd leftborder"/>
+<TD class="ucd leftborder"/>
+</TR>
+<TR class="vykon">
+<TD class="poznd noborder">
+        Stazka:00008182_20_0085</TD>
+<TD class="dphd leftborder">21.00</TD>
+<TD class="mjd leftborder">1/4 H</TD>
+<TD class="mnd leftborder">42.00</TD>
+<TD class="jcd leftborder">225.00</TD>
+<TD class="ucd leftborder">9450.00</TD>
+</TR>
+<TR>
+<TD class="topborder">
+            Dne:
+            23.09.20
+            :
+            3A8 7149
+            -
+            AS autojeøáb</TD>
+<TD class="dphd leftborder"/>
+<TD class="mjd leftborder"/>
+<TD class="mnd leftborder"/>
+<TD class="jcd leftborder"/>
+<TD class="ucd leftborder"/>
+</TR>
+<TR class="vykon">
+<TD class="poznd noborder">
+        Stazka:00008182_20_0086</TD>
+<TD class="dphd leftborder">21.00</TD>
+<TD class="mjd leftborder">1/4 H</TD>
+<TD class="mnd leftborder">34.00</TD>
+<TD class="jcd leftborder">225.00</TD>
+<TD class="ucd leftborder">7650.00</TD>
+</TR>
+<TR>
+<TD class="topborder">
+            Dne:
+            24.09.20
+            :
+            3A8 7149
+            -
+            AS autojeøáb</TD>
+<TD class="dphd leftborder"/>
+<TD class="mjd leftborder"/>
+<TD class="mnd leftborder"/>
+<TD class="jcd leftborder"/>
+<TD class="ucd leftborder"/>
+</TR>
+<TR class="vykon">
+<TD class="poznd noborder">
+        Stazka:00008182_20_0087</TD>
+<TD class="dphd leftborder">21.00</TD>
+<TD class="mjd leftborder">1/4 H</TD>
+<TD class="mnd leftborder">34.00</TD>
+<TD class="jcd leftborder">225.00</TD>
+<TD class="ucd leftborder">7650.00</TD>
+</TR>
+<TR>
+<TD class="topborder">
+            Dne:
+            25.09.20
+            :
+            3A8 7149
+            -
+            AS autojeøáb</TD>
+<TD class="dphd leftborder"/>
+<TD class="mjd leftborder"/>
+<TD class="mnd leftborder"/>
+<TD class="jcd leftborder"/>
+<TD class="ucd leftborder"/>
+</TR>
+<TR class="vykon">
+<TD class="poznd noborder">
+        Stazka:00008182_20_0088</TD>
+<TD class="dphd leftborder">21.00</TD>
+<TD class="mjd leftborder">1/4 H</TD>
+<TD class="mnd leftborder">36.00</TD>
+<TD class="jcd leftborder">225.00</TD>
+<TD class="ucd leftborder">8100.00</TD>
+</TR>
+<TR class="vykon">
+<TD class="poznd noborder"/>
+<TD class="dphd leftborder"/>
+<TD class="mjd leftborder"/>
+<TD class="mnd leftborder"/>
+<TD class="jcd leftborder"/>
+<TD class="ucd leftborder"/>
+</TR>
+<TR class="vykon">
+<TD class="poznd noborder"/>
+<TD class="dphd leftborder"/>
+<TD class="mjd leftborder"/>
+<TD class="mnd leftborder"/>
+<TD class="jcd leftborder"/>
+<TD class="ucd leftborder"/>
+</TR>
+<TR class="vykon">
+<TD class="poznd noborder"/>
+<TD class="dphd leftborder"/>
+<TD class="mjd leftborder"/>
+<TD class="mnd leftborder"/>
+<TD class="jcd leftborder"/>
+<TD class="ucd leftborder"/>
+</TR>
+<TR class="vykon">
+<TD class="poznd noborder"/>
+<TD class="dphd leftborder"/>
+<TD class="mjd leftborder"/>
+<TD class="mnd leftborder"/>
+<TD class="jcd leftborder"/>
+<TD class="ucd leftborder"/>
+</TR>
+<TR class="vykon">
+<TD class="poznd noborder"/>
+<TD class="dphd leftborder"/>
+<TD class="mjd leftborder"/>
+<TD class="mnd leftborder"/>
+<TD class="jcd leftborder"/>
+<TD class="ucd leftborder"/>
+</TR>
+<TR class="vykon">
+<TD class="poznd noborder"/>
+<TD class="dphd leftborder"/>
+<TD class="mjd leftborder"/>
+<TD class="mnd leftborder"/>
+<TD class="jcd leftborder"/>
+<TD class="ucd leftborder"/>
+</TR>
+<TR class="vykon">
+<TD class="poznd noborder"/>
+<TD class="dphd leftborder"/>
+<TD class="mjd leftborder"/>
+<TD class="mnd leftborder"/>
+<TD class="jcd leftborder"/>
+<TD class="ucd leftborder"/>
+</TR>
+<TR class="vykon">
+<TD class="poznd noborder"/>
+<TD class="dphd leftborder"/>
+<TD class="mjd leftborder"/>
+<TD class="mnd leftborder"/>
+<TD class="jcd leftborder"/>
+<TD class="ucd leftborder"/>
+</TR>
+<TR class="vykon">
+<TD class="poznd noborder"/>
+<TD class="dphd leftborder"/>
+<TD class="mjd leftborder"/>
+<TD class="mnd leftborder"/>
+<TD class="jcd leftborder"/>
+<TD class="ucd leftborder"/>
+</TR>
+<TR class="vykon">
+<TD class="poznd noborder"/>
+<TD class="dphd leftborder"/>
+<TD class="mjd leftborder"/>
+<TD class="mnd leftborder"/>
+<TD class="jcd leftborder"/>
+<TD class="ucd leftborder"/>
+</TR>
+<TR class="vykon">
+<TD class="poznd noborder"/>
+<TD class="dphd leftborder"/>
+<TD class="mjd leftborder"/>
+<TD class="mnd leftborder"/>
+<TD class="jcd leftborder"/>
+<TD class="ucd leftborder"/>
+</TR>
+<TR class="vykon">
+<TD class="poznd noborder"/>
+<TD class="dphd leftborder"/>
+<TD class="mjd leftborder"/>
+<TD class="mnd leftborder"/>
+<TD class="jcd leftborder"/>
+<TD class="ucd leftborder"/>
+</TR>
+<TR class="vykon">
+<TD class="poznd noborder"/>
+<TD class="dphd leftborder"/>
+<TD class="mjd leftborder"/>
+<TD class="mnd leftborder"/>
+<TD class="jcd leftborder"/>
+<TD class="ucd leftborder"/>
+</TR>
+<TR class="vykon">
+<TD class="poznd noborder"/>
+<TD class="dphd leftborder"/>
+<TD class="mjd leftborder"/>
+<TD class="mnd leftborder"/>
+<TD class="jcd leftborder"/>
+<TD class="ucd leftborder"/>
+</TR>
+<TR class="vykon">
+<TD class="poznd noborder"/>
+<TD class="dphd leftborder"/>
+<TD class="mjd leftborder"/>
+<TD class="mnd leftborder"/>
+<TD class="jcd leftborder"/>
+<TD class="ucd leftborder"/>
+</TR>
+<TR class="vykon">
+<TD class="poznd noborder"/>
+<TD class="dphd leftborder"/>
+<TD class="mjd leftborder"/>
+<TD class="mnd leftborder"/>
+<TD class="jcd leftborder"/>
+<TD class="ucd leftborder"/>
+</TR>
+<TR class="vykon">
+<TD class="poznd noborder"/>
+<TD class="dphd leftborder"/>
+<TD class="mjd leftborder"/>
+<TD class="mnd leftborder"/>
+<TD class="jcd leftborder"/>
+<TD class="ucd leftborder"/>
+</TR>
+<TR class="vykon">
+<TD class="poznd noborder"/>
+<TD class="dphd leftborder"/>
+<TD class="mjd leftborder"/>
+<TD class="mnd leftborder"/>
+<TD class="jcd leftborder"/>
+<TD class="ucd leftborder"/>
+</TR>
+<TR class="vykon">
+<TD class="poznd noborder"/>
+<TD class="dphd leftborder"/>
+<TD class="mjd leftborder"/>
+<TD class="mnd leftborder"/>
+<TD class="jcd leftborder"/>
+<TD class="ucd leftborder"/>
+</TR>
+<TR class="vykon">
+<TD class="poznd noborder"/>
+<TD class="dphd leftborder"/>
+<TD class="mjd leftborder"/>
+<TD class="mnd leftborder"/>
+<TD class="jcd leftborder"/>
+<TD class="ucd leftborder"/>
+</TR>
+<TR class="vykon">
+<TD class="poznd noborder"/>
+<TD class="dphd leftborder"/>
+<TD class="mjd leftborder"/>
+<TD class="mnd leftborder"/>
+<TD class="jcd leftborder"/>
+<TD class="ucd leftborder"/>
+</TR>
+<TR class="vykon">
+<TD class="poznd noborder"/>
+<TD class="dphd leftborder"/>
+<TD class="mjd leftborder"/>
+<TD class="mnd leftborder"/>
+<TD class="jcd leftborder"/>
+<TD class="ucd leftborder"/>
+</TR>
+</TBODY>
+</table>
+<table id="pata">
+<TR>
+<TD colspan="4" class="textcenter">Celkem Kè bez danì z pøidané hodnoty :</TD>
+<TD class="textright">
+<span>119925.00Kè</span>
+</TD>
+</TR>
+<TR>
+<TD colspan="4" class="textcenter">
+         Plnìní osvobozené od danì podle § .... zákona o DPH:
+        </TD>
+<TD class="textright">0.00Kè</TD>
+</TR>
+<TR>
+<TD>Snížená sazba</TD>
+<TD>Základ danì :</TD>
+<TD class="textright">0.00Kè</TD>
+<TD class="textright">DPH:</TD>
+<TD>0.00Kè</TD>
+</TR>
+<TR>
+<TD class="patatextsazba">Základní sazba</TD>
+<TD class="patatextzaklad">Základ danì:</TD>
+<TD class="textright">119925.00Kè</TD>
+<TD class="textright">DPH:</TD>
+<TD class="textright">25184.30Kè</TD>
+</TR>
+<TR>
+<TD colspan="4" class="textcenter">
+          CELKOVÁ ÈÁSTKA FAKTURY S DPH K ÚHRADÌ :
+      </TD>
+<TD class="textright">145109.30Kè</TD>
+</TR>
+<TR>
+<TD colspan="2">
+<div>
+        Za zhotovitele:   
+        Ivana Tesaøová</div>
+<div> 
+        Telefon/fax:         
+        266 011 966</div>
+<div class="razitko">
+        Razítko:
+        </div>
+<div>Podpis:</div>
+<br/>
+        Datum:
+        12.10.2020</TD>
+<TD colspan="3">
+<div>
+        Za zhotovitele:   
+        Ivana Tesaøová</div>
+<div> 
+        Telefon/fax:
+        </div>
+<div class="razitko">
+        Razítko:
+        </div>
+<div>Podpis:</div>
+<br/>
+        Datum:
+      </TD>
+</TR>
+</table>
+</DIV>
+</body>
+</html>
