@@ -19,7 +19,7 @@
     </HIST>
   </ORIGIN>
 
-  <xsl:output method="html" encoding="windows-1250"/>
+  <xsl:output method="html" encoding="UTF-8"/>
   <!--                 nezobrazovane udaje                 -->
   <xsl:template match="text()"/>
 
@@ -106,8 +106,8 @@
     <html>
       <head>
         <META content="text/html" charset="UTF-8" http-equiv="Content-Type"/>
-        <META content="cs" http-equiv="Content-language"/>
-        <title>Faktura - MIS</title>
+        
+        <title>Faktura - MIS XXX</title>
 
         <!--link rel='stylesheet' type='text/css' href='print.css' media="print" />  -->
         <style>
@@ -253,7 +253,7 @@ table tr.page-break{
           <span class="podtr">Zhotovitel:</span>
 
           <dl class="icodico">
-            <dt>IČ:</dt>
+            <dt>IXXXČ:</dt>
             <dd>
               <xsl:value-of select="//ORIGIN/ICO"/>
             </dd>
