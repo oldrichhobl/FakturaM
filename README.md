@@ -1,2 +1,7 @@
 # FakturaM
- Vzor faktury pro převod do pdf
+ Vzor faktury pro 
+ 
+ v návod
+ 
+ návod
+ převod do pdf
